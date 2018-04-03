@@ -26,5 +26,12 @@ namespace OdeToFood.Controllers
 
             return View();
         }
+
+        public ActionResult New()
+        {
+            ViewBag.Message = "This is a viewbag message.";
+
+            return View();
+        }
     }
 }
