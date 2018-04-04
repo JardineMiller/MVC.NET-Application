@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC.NET_Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,15 @@ namespace MVC.NET_Application.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Author()
+        {
+            var model = new Author();
+            model.Name = "Jardine";
+            model.Location = "Edinburgh, UK";
+
+            return View(model);
         }
     }
 }
