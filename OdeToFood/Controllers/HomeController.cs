@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OdeToFood.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,13 @@ namespace OdeToFood.Controllers
     {
         public ActionResult Index()
         {
+            var controller = RouteData.Values["controller"];
+            var action = RouteData.Values["action"];
+            var id = RouteData.Values["id"];
+
+            var message = String.Format("{0}::{1} {2}", controller, action, id);
+            ViewBag.Mesaage = message;
+
             return View();
         }
 
@@ -29,9 +37,11 @@ namespace OdeToFood.Controllers
 
         public ActionResult New()
         {
-            ViewBag.Message = "This is a viewbag message.";
+            var model = new About();
+            model.Name = "Jardine";
+            model.Location = "Edinburgh, UK";
 
-            return View();
+            return View(model);
         }
     }
 }

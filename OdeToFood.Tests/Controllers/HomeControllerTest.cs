@@ -50,5 +50,18 @@ namespace OdeToFood.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void New()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.New() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result.Model);
+        }
     }
 }
