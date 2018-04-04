@@ -51,14 +51,5 @@ namespace MVC.NET_Application.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
-        public void Author()
-        {
-            HomeController controller = new HomeController();
-
-            ViewResult result = controller.Author() as ViewResult;
-
-            Assert.IsNotNull(result.Model);
-        }
     }
 }
