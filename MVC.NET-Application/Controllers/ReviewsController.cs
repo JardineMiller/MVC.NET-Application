@@ -1,138 +1,138 @@
-﻿using MVC.NET_Application.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿//using MVC.NET_Application.Models;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
+//using System.Web.Mvc;
 
-namespace MVC.NET_Application.Controllers
-{
-    public class ReviewsController : Controller
-    {
-        // GET: Reviews
-        public ActionResult Index()
-        {
-            var model =
-                from review in _reviews
-                orderby review.Country
-                select review;
+//namespace MVC.NET_Application.Controllers
+//{
+//    public class ReviewsController : Controller
+//    {
+//        // GET: Reviews
+//        public ActionResult Index()
+//        {
+//            var model =
+//                from review in _reviews
+//                orderby review.Country
+//                select review;
 
-            return View(model);
-        } 
+//            return View(model);
+//        } 
 
-        // GET: Reviews/Details/5
-        public ActionResult Details(int id)
-        {
-            var review = _reviews.Single(rev => rev.Id == id);
+//        // GET: Reviews/Details/5
+//        public ActionResult Details(int id)
+//        {
+//            var review = _reviews.Single(rev => rev.Id == id);
 
-            return View(review);
-        }
+//            return View(review);
+//        }
 
-        // GET: Reviews/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+//        // GET: Reviews/Create
+//        public ActionResult Create()
+//        {
+//            return View();
+//        }
 
-        // POST: Reviews/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+//        // POST: Reviews/Create
+//        [HttpPost]
+//        public ActionResult Create(FormCollection collection)
+//        {
+//            try
+//            {
+//                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+//                return RedirectToAction("Index");
+//            }
+//            catch
+//            {
+//                return View();
+//            }
+//        }
 
-        // GET: Reviews/Edit/5
-        public ActionResult Edit(int id)
-        {
-            var review = _reviews.Single(rev => rev.Id == id);
+//        // GET: Reviews/Edit/5
+//        public ActionResult Edit(int id)
+//        {
+//            var review = _reviews.Single(rev => rev.Id == id);
 
-            return View(review);
-        }
+//            return View(review);
+//        }
 
-        // POST: Reviews/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            var review = _reviews.Single(rev => rev.Id == id);
+//        // POST: Reviews/Edit/5
+//        [HttpPost]
+//        public ActionResult Edit(int id, FormCollection collection)
+//        {
+//            var review = _reviews.Single(rev => rev.Id == id);
 
-            if(TryUpdateModel(review))
-            {
-                return RedirectToAction("Index");
-            }
+//            if(TryUpdateModel(review))
+//            {
+//                return RedirectToAction("Index");
+//            }
 
-            return View(review);
-            //try
-            //{
-            //    // TODO: Add update logic here
+//            return View(review);
+//            //try
+//            //{
+//            //    // TODO: Add update logic here
 
-            //    return RedirectToAction("Index");
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
+//            //    return RedirectToAction("Index");
+//            //}
+//            //catch
+//            //{
+//            //    return View();
+//            //}
 
 
-        }
+//        }
 
-        // GET: Reviews/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+//        // GET: Reviews/Delete/5
+//        public ActionResult Delete(int id)
+//        {
+//            return View();
+//        }
 
-        // POST: Reviews/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+//        // POST: Reviews/Delete/5
+//        [HttpPost]
+//        public ActionResult Delete(int id, FormCollection collection)
+//        {
+//            try
+//            {
+//                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+//                return RedirectToAction("Index");
+//            }
+//            catch
+//            {
+//                return View();
+//            }
+//        }
 
-        static List<RestaurantReview> _reviews = new List<RestaurantReview>
-        {
-            new RestaurantReview
-            {
-                Id = 1,
-                Name = "Cinnamon Club",
-                City = "London",
-                Country = "UK",
-                Rating = 10
-            },
-            new RestaurantReview
-            {
-                Id = 2,
-                Name = "Marrakesh",
-                City = "D.C",
-                Country = "USA",
-                Rating = 10
-            },
-            new RestaurantReview
-            {
-                Id = 3,
-                Name = "The House of Elliot",
-                City = "Ghent",
-                Country = "Belgium",
-                Rating = 10
-            },
+//        static List<RestaurantReview> _reviews = new List<RestaurantReview>
+//        {
+//            new RestaurantReview
+//            {
+//                Id = 1,
+//                Name = "Cinnamon Club",
+//                City = "London",
+//                Country = "UK",
+//                Rating = 10
+//            },
+//            new RestaurantReview
+//            {
+//                Id = 2,
+//                Name = "Marrakesh",
+//                City = "D.C",
+//                Country = "USA",
+//                Rating = 10
+//            },
+//            new RestaurantReview
+//            {
+//                Id = 3,
+//                Name = "The House of Elliot",
+//                City = "Ghent",
+//                Country = "Belgium",
+//                Rating = 10
+//            },
 
-        };
-    }
-}
+//        };
+//    }
+//}

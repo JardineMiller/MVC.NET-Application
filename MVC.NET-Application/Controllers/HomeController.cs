@@ -9,9 +9,13 @@ namespace MVC.NET_Application.Controllers
 {
     public class HomeController : Controller
     {
+        OdeToFoodDb _db = new OdeToFoodDb();
+
         public ActionResult Index()
         {
-            return View();
+            var model = _db.Restaurants.ToList();
+
+            return View(model);
         }
 
         public ActionResult About()
@@ -35,6 +39,15 @@ namespace MVC.NET_Application.Controllers
             model.Location = "Edinburgh, UK";
 
             return View(model);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if(_db != null)
+            {
+                _db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
